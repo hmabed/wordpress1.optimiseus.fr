@@ -23,8 +23,8 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         script: |
-        cd /var/www/wordpress1.optimiseus.fr/
-        wp --allow-root db import /var/www/wordpress1.sql && wp --allow-root search-replace 'http://localhost/wordpress1.optimiseus.fr' 'http://wordpress1.optimiseus.fr'
-        mysql -u wordpress1 -p${{ secrets.DB_PASSWD }} wordpress1 < /var/www/wordpress1.sql
-        git pull 
+            cd /var/www/wordpress1.optimiseus.fr/
+            wp --allow-root db import /var/www/wordpress1.sql && wp --allow-root search-replace 'http://localhost/wordpress1.optimiseus.fr' 'http://wordpress1.optimiseus.fr'
+            mysql -u wordpress1 -p${{ secrets.DB_PASSWD }} wordpress1 < /var/www/wordpress1.sql
+            git pull 
         
